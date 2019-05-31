@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Мячик</title>
+	<style type="text/css">
+		canvas {
+			background-color: lightgray;
+			border: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="1000" height="600"></canvas>
+	<script type="text/javascript">
+		class Ball {
+			constructor(x, y, radius, speedX, speedY, color){
+				this.speedX = speedX;
+				this.speedY = speedY;
+				this.x = x;
+				this.y = y;
+				this.radius = radius;
+				this.color = color;
+			}
+			draw(){
+				ctx.beginPath();
+				ctx.arc(this.x,this.y, this.radius, 0, 2 * Math.PI);
+				ctx.fillStyle = this.color;
+				ctx.fill();
+			}
+			move(){
+				this.x += this.speedX;
+				this.y += this.speedY;
+			}
+			collisionDetect(canvasWidth, canvasHeight){
+				if (this.x < this.radius || this.x > (canvasWidth - this.radius)) {
+					this.speedX *= -1;
+				}
+				if (this.y < this.radius || this.y > (canvasHeight - this.radius)) {
+					this.speedY *= -1;
+				}
+			}
+			act(width, height) {
+				this.move();
+				this.collisionDetect(width, height);
+				this.draw();
+			}
+		}
+		function randNum(rmin, rmax){
+			var r = 0;
+			while (r == 0) {
+				r = Math.round(rmin + (rmax-rmin)*(Math.random()));
+			}
+			return r;
+		}
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		var width = canvas.width;
+		var height = canvas.height;	
+
+		var circles = [];
+		for (var i = 10 - 1; i >= 0; i--) {
+			circles.push(new Ball(
+				randNum(20,width-20),
+				randNum(20,height-20),
+				30,
+				randNum(2,10),
+				randNum(2,10),
+				"rgb("+randNum(0,255)+","+randNum(0,255)+","+randNum(0,255)+")"
+				)
+			);			
+		}
+
+		setInterval(function(){
+			ctx.clearRect(0,0,width, height);	
+			for (var i = 10 - 1; i >= 0; i--) {
+				circles[i].act(width, height);		
+			}	
+		}, 30);		
+
+	</script>
+</body>
+</html>

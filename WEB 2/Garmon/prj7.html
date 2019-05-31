@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	.main{
+		margin: 0 auto;
+		max-width: 700px;
+	}		
+	
+	ul.photo{
+		display: flex;
+		justify-content: center;
+		margin-top: 150px;
+		padding: 0;	
+	}
+
+	ul.photo li{
+		list-style-type: none;
+		width: 50px;
+		overflow: hidden;
+		transition: .8s;
+		cursor: pointer;
+		display: block;
+		box-shadow: 1px 3px 10px lightblue;
+	}
+
+	ul.photo img{
+		width: 300px;
+
+	}
+
+	ul.photo li:hover{
+		width: 300px;
+	}
+
+	ul.photo li:nth-child(3){
+		width: 300px;
+	}
+	ul.photo:hover li:nth-child(3){
+		width: 50px;
+	}
+
+
+
+	</style>
+</head>
+<body>
+
+	<div class="main">
+		<ul class ="photo">
+			<li><img src="m1.jpg"></li>
+			<li><img src="m2.jpg"></li>
+			<li><img src="m3.jpg"></li>
+			<li><img src="m4.jpg"></li>
+			<li><img src="m5.jpg"></li>
+		</ul>
+	</div>
+
+</body>
+</html>

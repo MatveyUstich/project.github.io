@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	
+	.holder{
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		top: 0px;
+		left: 0;
+		background-color: pink;
+		opacity: 0;
+		transition: .7s ease-in-out;
+		z-index:  11;
+	}	
+
+	.main{
+		outline: 2px solid orange;
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: blue;
+		transition: .5s ease-in-out;
+		opacity: 1;
+		z-index: 10;
+		overflow: hidden;
+		}
+
+	
+		.main:hover .holder{
+		opacity: 1;
+		transform: rotate(90deg);
+		border: 1px green solid;
+			transition: .7s;
+			width: 48px;
+		height: 48px;
+		z-index:  11;
+	}
+
+	.move{
+		position: absolute;
+		width: 100%;
+		height: 50px;
+		left: 0%;
+		top: 50%;
+		transform: translate(0,-50%);
+		/*outline: 1px solid orange;*/
+		/*background-color: yellow;*/
+	}
+
+	.move:before, .move:after{
+	content: "";
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	background: linear-gradient(180deg, lightblue, white);
+	opacity:1;
+	/*transition: 1s ease-in-out;*/
+	}
+
+	div.main .move:before{
+		transform: translateY(-255%);
+		background: linear-gradient(0deg,lightblue, white);
+	}
+
+	div.main .move:after{
+	transform: translateY(255%);
+	background: linear-gradient(180deg, lightblue, white);
+	}
+
+	.main:hover .move:before{
+	transform: translateY(255%); 
+	transition: 1s;
+	opacity:.0;
+	
+	}
+
+	.main:hover .move:after{
+	transform: translateY(-255%); 
+	transition: 1s;
+	opacity:.0;
+	}
+	.main:hover{
+
+		transform: scale(1.2) translate(-40%,-40%);
+
+	}
+
+	.main:active{
+		border: 2px yellow solid;
+		border-radius: 10px;
+		transition: .5s;
+	}
+
+
+	</style>
+
+</head>
+<body>
+		
+
+
+		<div class = "main">
+			
+
+			<div class ="holder">
+						
+			</div>
+			<div class= "move">
+					
+
+			</div>
+			
+			
+		</div>
+
+
+
+</body>
+</html>

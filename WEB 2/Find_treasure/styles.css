@@ -1,0 +1,24 @@
+#map {
+	background-image: url(map.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	width: 800px;
+	height: 640px;
+
+	float: left;
+}
+#hint_box {
+	float: left;
+	margin-left: 20px;
+}
+
+#hint_box p:first-child {
+	font-weight: bold;
+}
+
+img {
+	position: absolute;
+
+	width: 70px;
+}

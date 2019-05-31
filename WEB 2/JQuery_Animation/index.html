@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Функции jQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Заголовок</h1>
+	<p id="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. </p>
+
+	<div class="square"></div>
+	<div class="circle"></div>
+	<h2 id="floatText">Летающий текст!!!</h2>
+
+	<script type="text/javascript">		
+		$("h1").text("Тест");
+		$("body").append("<h2>Добавить текст</h2>");
+		
+		setTimeout(function(){
+			$("h1").text("Прошло 2 секунды");		
+		}, 2000);
+
+		var ti = setInterval(function(){
+			$("#lorem").fadeOut(200);
+			$("#lorem").fadeIn(300);
+		}, 1000);
+
+		setInterval(function(){
+			$(".square").slideUp(2000);
+			$(".square").slideDown(2000);
+		}, 1000);
+
+		setTimeout(function() {
+			clearInterval(ti);
+		}, 5000);
+
+		$(".circle").hide(2000).delay(1000).show(2000);
+
+		$(".circle").fadeTo(2000, 0.1);
+
+		var shiftLeft = 0;
+		var dir = true;
+		setInterval(function(){
+			$("#floatText").offset({left: shiftLeft});
+			if (dir) {
+				shiftLeft++;
+			} else {
+				shiftLeft--;
+			}
+			if (shiftLeft > (window.innerWidth - 200) || shiftLeft < 0) {
+				dir = !dir;
+			}
+		}, 2);
+
+	</script>
+</body>
+</html>

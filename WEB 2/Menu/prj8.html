@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>    </title>
+	<style type="text/css">
+		
+	body{
+	background-color: lightblue;
+
+	}
+
+	.menu *{
+		margin: 0;
+		padding: 0;
+	}
+	.menu{
+		margin-top: 100px;
+	}
+	.menu ul{
+		list-style: none;
+	}
+	.menu > ul{
+		display: flex;
+		justify-content: center;
+	}
+
+	.menu > ul li a{
+		display: block;
+		background: white;
+		padding: 15px 30px 15px 40px;
+		font-size: 15px;
+		color: black;
+		text-decoration: none;
+		text-transform: uppercase;
+
+	}
+	.menu > ul li{
+		position:  relative;
+		border-right: 1px solid black;
+	}
+	.menu > ul li:first-child{
+		border-left: 1px solid black;
+	}
+
+	.menu li a:hover{
+		background-color: black;
+		color: white; 
+		box-shadow: 1px 7px 10px -5px black; 
+		transition: .7s;
+		opacity: .6;
+	}
+	.menu li ul{
+		position: absolute;
+		min-width: 100%;
+		display: none;
+	}
+	.menu li > ul li a{
+		padding: 10px;
+		text-decoration: none;
+		background: lightgray;
+	}
+	.menu li > ul li ul{
+		position: absolute;
+		right: -112%;
+		top: 0;
+	}
+
+	.menu li:hover > ul{
+		display: block;
+	}
+
+	</style>
+</head>
+<body>
+
+	<div class = "menu">
+			<ul>
+				<li> <a href=""> Главная </a></li>	
+				<li><a href=""> Приложения </a>
+					<ul>
+						<li><a href="#">Шарфы</a></li>
+						<li><a href="#">Шапки</a></li>
+						<li><a href="#">Перчатки</a>
+							<ul>
+								<li><a href="#"> Хлопок</a></li>								
+								<li><a href="#">Металлизированные</a></li>
+								<li><a href="#">С подогревом</a></li>
+
+
+							</ul>		
+
+						</li>
+						<li><a href="#">Свитеры</a></li>
+						<li><a href="#">Носки</a></li>					
+					</ul>
+				</li>
+				<li><a href=""> Услуги </a></li >
+				<li><a href=""> Новости </a></li >
+				<li><a href=""> Контакты </a></li >
+				<li><a href=""> Помощь </a></li>
+			</ul>	
+	</div>
+
+
+</body>
+</html>

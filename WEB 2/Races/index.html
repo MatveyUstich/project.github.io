@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Объекты</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		body {
+			font-family: Verdana;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<img src="img/finish.jpg" id="finish" style="height: 412px; position: absolute; right: 0;">
+	<p id="winner"></p>
+
+	<p style="position: absolute; top: 50px;">Боб</p>
+	<p style="position: absolute; top: 160px;">Русик</p>
+
+	<script type="text/javascript">
+	function random(min, max) {
+		return Math.round(min + (max-min) * Math.random());
+	}
+	class Cockroach {
+		constructor(x, y, speed = 10, nme = 'Кукарача') {
+			this.x = x;
+			this.y = y;
+			this.speed = speed;
+			this.nme = nme;
+		}
+		show(){
+			var roachImg = '<img src="img/roach.jpg">';
+			this.roachElement = $(roachImg);
+
+			this.roachElement.css({
+				height: "70px",
+				position: "absolute",
+				top: this.y,
+				left: this.x
+			});
+
+			$("body").append(this.roachElement);
+		}
+		forward() {
+			this.x += this.speed;
+			this.roachElement.css({
+				height: "70px",
+				position: "absolute",
+				top: this.y,
+				left: this.x
+			});
+		}
+	}
+	const bob = new Cockroach(0, 100, random(5, 10), "Боб");
+	const rusik = new Cockroach(0, 200, random(5, 10), "Русик");
+	bob.show();
+	rusik.show();
+	var frame = setInterval(function(){
+		bob.forward();
+		rusik.forward();
+		bob.speed += random(-2, 2);
+		rusik.speed += random(-2, 2);
+		if (bob.x > 1042) {
+			clearInterval(frame);
+			$("#winner").text("Победил " + bob.nme);
+		}
+		else if (rusik.x > 1042) {
+			clearInterval(frame);
+			$("#winner").text("Победил " + rusik.nme);
+		}	
+	}, 33);	
+
+		
+
+	</script>
+</body>
+</html>

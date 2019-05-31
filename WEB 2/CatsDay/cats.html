@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>День Котов</title>
+	<link rel="shortcut icon" href="favicon.png" type="image/png">
+	<script type="text/javascript" src="catsLife.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Прокорми кота в День Кота!</h1>
+		<div class="status">
+			<p class="fullness">Сытость: </p>
+			<p class="hp">Здоровье: </p>
+			<p class="mood">Настроение: </p>
+			<p class="age">Возраст: </p>
+		</div>
+		<div class="content">
+			<div class="image">				
+			</div>
+			<div class="say">
+				<p>Хочется поесть...</p>
+			</div>
+		</div>
+		<form>
+			<input type="button" name="feed" onclick="feeding()" value="Покормить">
+			<input type="button" name="walk" onclick="walking()" value="Погулять">
+			<input type="button" name="heel" onclick="heeling()" value="Полечить">
+			<input type="button" name="play" onclick="playing()" value="Поиграть">
+		</form>
+	</div>
+</body>
+</html>

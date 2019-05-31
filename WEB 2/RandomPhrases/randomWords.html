@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Генератор случайных новостей</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var randInt = function (nMin , nMax) {
+			return Math.round(nMin + (nMax - nMin) * Math.random());
+		} 
+
+
+		var addition = ["зерно","кнопку","троллейбус","часы","салатик","стул","пасатижи","ветер","провод","пельмени","хачапури","силой мысли"];
+		var verbs = ["ест","бьет","клюет","думает","делает","управляет","свергает","походит на","косится на", "злится на", "играет в", "смотрит в", "болтает с"];
+		var adverbs =["быстро","ловко","экстримально","молниеносно","программно","тихо","люто","странно","судорожно","искренне","красиво","никак не","сверкая пятками"];
+		var nouns = ["интроверт","енот", "рыба","бобёр","капибара","курица","трудовик","кот","барсик","принтер","лом","гантеля","макаронина"];
+
+		var phrase = nouns[randInt(0,nouns.length - 1)] + " " + 
+		adverbs[randInt(0,adverbs.length - 1)] + " " +
+		verbs[randInt(0,verbs.length - 1)] + " " + 		  
+		addition[randInt(0,addition.length - 1)];
+		
+		console.log(phrase);
+
+		document.write("<h1>" + phrase + '</h1>');
+	</script>
+	
+</body>
+</html>

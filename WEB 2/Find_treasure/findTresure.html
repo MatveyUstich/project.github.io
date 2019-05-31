@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Найди клад!!!</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+ 
+	<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+</head>
+<body>	
+		<div id="float" title="Привет!">
+			<p>Найди клад на карте (используй ЛКМ).</p>
+		</div>
+		<div id="map">
+			<img src="tresure.png">
+		</div>
+		<div id="hint_box">
+			<p>Подсказка: </p>
+			<p id="hint"></p>
+		</div>
+
+		<script type="text/javascript">
+			var randomNumber = function(nmin, nmax) {
+				return Math.round(nmin + ((nmax-nmin) * Math.random()))
+			}
+			var distance = function(event, tresureXY) {
+				return Math.sqrt(Math.abs(event.offsetX - tresureXY[0])**2 + Math.abs(event.offsetY - tresureXY[1])**2);	
+			}
+			var getHint = function(d) {
+				if (d > 500) {
+					return "Морозно";
+				} else if (d > 300) {
+					return "Холодно";
+				} else if (d > 150) {
+					return "Прохладно";
+				} else if (d > 75) {
+					return "Теплее";
+				} else {
+					return "Жарко";
+				}
+			}
+			$(document).ready(()=>{
+				setTimeout(()=>{
+					alert("Найди клад на карте (используй ЛКМ).")
+				}, 500);
+				
+				$("img").hide();
+
+				const tresureX = randomNumber(80, 670);
+				const tresureY = randomNumber(80, 480);
+				const tresureXY = new Array(tresureX, tresureY);
+
+				$("img").offset({left: tresureXY[0], top: tresureXY[1]});
+
+				$("#map").click(function(event){
+					var d = distance(event, tresureXY);
+					var hint = getHint(d);
+					$("#hint").text(hint);
+					console.log(d);
+					if (d < 50) {
+						$("img").show(1000);
+						alert("Вы нашли сундук!!!");
+						return;
+					}					
+				});			
+			})
+			
+		</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>   </title>
+	<style type="text/css">
+	body{
+		background-color: white;
+	}		
+	.main{
+		position: absolute;
+		top: 100px;
+		left: 100px;
+		width: 150px;
+		height: 350px;
+		border-radius: 30px;
+		background-color: gray;
+		infinite;
+		/*animation-iteration-count: 3;*/
+
+	}
+
+/*animation: main 2s ease-in-out */
+
+	.red, .yellow, .green{
+		position: flex;
+		left: 25px;
+		width: 100px;
+		height: 100px;
+		border-radius: 100%;
+		background-color: white;
+		transform: translateX(+15%);
+		margin: 10px;
+		opacity: .8;
+	}
+
+	.red{
+		animation: red 5s linear; 
+		/*animation-iteration-count: 1;*/
+	}
+	.yellow{
+	
+		animation: yellow 2s linear;
+		animation-delay: 3s;
+	}
+
+	.green{
+		animation: green 10s linear;
+		animation-delay:5s;
+	}
+
+	@keyframes red{
+		0%{background-color: red;}
+		96%{background-color: red;}
+		100%{background-color: white;}
+	}
+
+	@keyframes yellow{
+		0%{background-color: yellow;}
+		90%{background-color: yellow;}
+		100%{background-color: white;}
+	}
+
+	@keyframes green{
+		0%{background-color: green;}
+		98%{background-color: green;}
+		100%{background-color: white;}
+	}
+
+	@keyframes main{
+	0%, 100% {
+		transform: translateX(0%);
+		background-color: yellow;
+	}
+	50%{
+		transform: translateX(200%);
+		background-color: white;
+	}	
+	} 
+
+	.main:hover {
+		animation-play-state: paused;
+	}
+
+	</style>
+</head>
+<body>
+
+	<div class = "main">
+
+	<div class="red"> 
+
+	</div>
+	<div class="yellow"> 
+
+	</div>
+	<div class="green"> 
+
+	</div>
+
+
+	</div>
+
+
+</body>
+</html>

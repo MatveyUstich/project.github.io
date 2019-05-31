@@ -1,0 +1,191 @@
+body {
+	background-color: black;
+	color: white;
+	background-image: url(IMG/BG.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	font-family: Verdana, sans-serif;
+}
+.container {
+	width: 1000px;
+	margin: 0 auto;	
+}
+
+header {
+	background-color: red;
+	width: 1000px;
+}
+aside {
+	background-color: rgba(255,255,255,0.8);
+	border-radius: 7px;
+	
+	width: 235px;
+
+	float: left;
+	clear: both;
+}
+
+aside ul {
+	list-style-type: none;
+	padding-left: 25px;
+
+	margin-top: 26px;
+}
+
+aside ul li a {
+	text-decoration: none;
+	color: #000;
+	transition-duration: .3s;
+}
+aside ul li a:hover {
+	color: #888;
+}
+aside ul li:hover:after{
+	background-color: #888;
+}
+
+aside ul li:after {
+	content: "";
+	color: #f00;
+	background-color: #000;
+	display: block;
+
+	width: 75px;
+	height: 1px;
+
+	margin-top: 10px;
+	margin-bottom: 15px;
+	transition-duration: .3s;
+}
+
+section {	
+	width: 765px;
+	float: left;	
+}
+
+div.item {
+	width: 235px;
+	background-color: rgba(255,255,255,0.8);
+	float: left;	
+
+	border-radius: 7px;
+
+	padding-top: 30px;
+
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+img {
+	display: block;
+	margin: 0 auto;
+}
+
+button {
+	display: block;
+	width: 135px;
+	height: 28px;
+
+	margin: 20px auto;
+
+	text-transform: uppercase;
+	font-family: Verdana, sans-serif;
+	
+	background-color: transparent;
+
+	border: 1px solid #000;
+	border-radius: 5px;
+
+	cursor: pointer;
+	transition-duration: 0.5s;
+}
+button:hover {
+	background-color: rgba(153, 0, 0, 0.3);
+	color: #eee;
+}
+
+.logo {	
+	float: left;
+
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 120px;
+}
+nav {
+	float: left;
+
+	padding-top: 20px;
+}
+
+nav ul {
+	list-style-type: none;
+	padding-left: 20px;
+}
+nav ul li {
+	text-transform: uppercase;
+	display: inline-block;
+	margin-right: 40px;
+}
+nav ul li a {
+	text-decoration: none;
+	color: #fff;
+	font-family: Verdana, sans-serif;
+	transition-duration: .3s;
+}
+nav ul li a:hover {
+	color: #888;
+}
+
+.contacts {	
+	float: left;
+	text-align: right;
+
+	padding-top: 10px;
+	padding-left: 50px;
+}
+
+.contacts .phone {
+	font-weight: bold; 
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+.contacts p {
+	font-size: 14px;
+	margin: 0;
+}
+
+footer {	
+	width: 1000px;
+	clear: both;
+
+	font-size: 14px;
+}
+
+footer a {
+	text-decoration: none;
+	color: #fff;
+}
+footer a:hover {	
+	color: #888;
+}
+footer div {
+	display: inline-block;
+}
+.timetable {	
+	width: 235px;
+}
+
+.rights {	
+	width: 505px;
+	text-align: center;
+}
+
+.sign {	
+	width: 260px;
+	text-align: right;
+}
+.under {
+	text-decoration: underline;
+}

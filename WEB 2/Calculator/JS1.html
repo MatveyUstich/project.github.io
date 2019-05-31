@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+
+	</title>
+	
+	<style type="text/css">
+		.area{
+			background-color: lightblue;
+			width: 300px;
+			height: auto;
+			color: black;
+			font-size: 20px;
+			font-weight: 600;
+		}	
+
+	.area input{
+		font-size: 20px;
+		text-align: center;
+
+	}	
+	input[name="t1"]{
+		width: 45%;
+		margin-left: 2.5%;
+	}
+	input[name="t2"]{
+		width: 45%;
+
+	}
+	input[name = "button"]{
+
+		position: inline;
+		margin-left: 4px;
+		width: 50px;
+		border-radius: 20px;
+	}
+
+
+input[name="button1"]{
+		width: 90%;
+		margin-left: 15px;
+	}
+	</style>
+
+	<script type="text/javascript" src="js.js"></script>
+	
+</head>
+<body>
+	
+	<form name = "forma1" class = "area">
+		
+	 <input type="text" name="t1" size="12">  
+
+	 <input type="text" name="t2" size="12"> <br> <br>
+
+	 <input type="button" name="button" size="12" value= "+" onclick="sum();">
+	 <input type="button" name="button" size="12" value= "-" onclick="sub();">
+	 <input type="button" name="button" size="12" value= "*" onclick="mul();">
+	 <input type="button" name="button" size="12" value= "/" onclick="div();"> 
+	 <input type="button" name="button" size="12" value= "C" onclick="clear();"> 
+	 <br><br>
+	
+	<input type="button" name="button1" value= "=" onclick="calc();"> <br><br>
+	
+	Результат <input type="text" name = "res" size="10">
+
+	</form>
+
+	
+	
+
+</body>
+</html>
